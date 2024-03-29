@@ -1,0 +1,38 @@
+.images-css {object-fit: cover;}
+.carousel > .carousel-inner > .carousel-item > img{
+    width:240px; /* Yeap you can change the width and height*/
+    height:80vh;
+}
+
+.carousel-caption {
+    color: black;
+    right: 58%;
+    text-align: center;
+    max-width: 500px;
+    left: auto;
+    top: auto;
+}
+
+.container-fluid > .row >.contents{
+    text-align: center;
+}
+
+.carousel-titles{
+    font-family: "Trirong", serif;
+    font-size: x-large;
+    font-weight: 1000;
+    color: midnightblue;
+}
+.carousel-description{
+    font-family: "Trirong", serif;
+    font-size: large;
+    font-weight: 700;
+    color: navy;
+}
+
+@media screen and (min-width: 300px) and (max-width: 600px) {
+    .carousel > .carousel-inner > .carousel-item > img{
+        margin-top: 4rem;
+        height: auto;
+    }
+  }

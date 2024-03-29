@@ -1,0 +1,33 @@
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: whitesmoke;
+}
+
+.avatar{
+    // height: auto;
+    // width: 5%;
+    object-fit: scale-down;
+    
+}
+.avatar {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    border-radius: 80%;
+    border: 1px  solid #dee2e6;
+    height: 4.0rem;
+    width: 4.0rem;
+    overflow: hidden;
+}
+.avatar > img {
+    flex-grow: 1;
+    object-fit: cover;
+}
+.name{
+    padding-left: 1%;
+    font-family: "Trirong", serif;
+    font-size: large;
+}
+.nav-item {
+    cursor: pointer;
+}

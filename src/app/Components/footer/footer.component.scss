@@ -1,0 +1,20 @@
+.footer-tag{
+    margin: 0 3rem 0 3rem;
+    padding: 0 2rem 0 2rem;
+}
+
+
+.avatar {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    border-radius: 80%;
+    border: 1px  solid #dee2e6;
+    height: 4.0rem;
+    width: 4.0rem;
+    overflow: hidden;
+}
+.avatar > img {
+    flex-grow: 1;
+    object-fit: cover;
+}

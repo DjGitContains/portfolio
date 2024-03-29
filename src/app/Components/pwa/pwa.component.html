@@ -1,0 +1,13 @@
+
+<div  class="content" role="main">
+    <button (click)="fetchData()">http Api Loader</button>
+    <div  *ngIf="this.visible">
+    <div class="sub-content" *ngFor="let item of responses" >
+      <h2>{{item.name}}</h2>
+      <p>{{item.description}}</p>
+      <a href="{{item.url}}">More</a>
+      <br/>
+    </div>
+  </div>
+  </div>
+  

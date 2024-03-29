@@ -1,0 +1,180 @@
+
+<nav class="navbar navbar-expand-lg bg-body-primary fixed-top bg-dark navbar-dark">
+    <div class="container-fluid">
+      <div class="avatar">
+        <img src="../../../assets/pics/DSCN9779.JPG_N.jpeg" alt="" class="rounded-circle" >
+      </div>
+      <a class="navbar-brand name" href="https://www.linkedin.com/in/dhananjaya-balamakar-67906b195/" target="_blank">Dhananjay Balamakar</a>
+      <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <!--  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" -->
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse justify-content-end collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Check out
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" routerLink="/Progressive-Web-App" routerLinkActive="active" ariaCurrentWhenActive="page">
+                  Progressive Web App
+                </a>
+              </li>
+              <li><a class="dropdown-item" href="#">Basic ChatBot</a></li>
+              <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#certification">Certification</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/Home" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="modal" data-bs-target="#aboutMe">About me</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="modal" data-bs-target="#contactMe">Contact me</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  onclick="window.location.href='../../../assets/certifications/Dhananjaya_Resume.pdf'">Resume 
+              <!-- <i class="bi bi-download"></i> -->
+              <!-- <i class="bi bi-download"></i> -->
+              <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.<path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg> -->
+              <i class="fa fa-download" aria-hidden="true"></i>
+            </a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          </li> -->
+        </ul>
+        <!-- <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form> -->
+      </div>
+    </div>
+
+  </nav>
+
+
+  
+<!--Contact Modal -->
+<div class="modal fade" id="contactMe" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <form  [formGroup]="mailModel" (ngSubmit)="onSubmit()">
+        <!-- #sendMailForm="ngForm" -->
+      <div class="modal-header bg-secondary">
+        <h5 class="modal-title" id="exampleModalLabel">CONTACT ME</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body bg-info">
+                
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" class="form-control" id="name" required formControlName="name">
+                  <div *ngIf=" submitted && formCon.name.errors?.['required']"  class="alert alert-danger">Name  is required </div>  
+                </div>
+
+                <div class="form-group">
+                  <label for="number">Mobile Number</label>
+                  <input type="text" class="form-control" id="number" required formControlName="number">
+                  <div *ngIf=" submitted && formCon.number.errors?.['required']"  class="alert alert-danger">Mobile Number is required </div>  
+                  <!-- <div *ngIf="formCon.from.errors?.['number']"  class="alert alert-danger">Mobile number isn't valid! </div>   -->
+                  <!-- <div>{{formCon.from.errors}}</div> -->
+                
+                </div>
+                
+                <div class="form-group">
+                  <label for="from">Email</label>
+                  <input type="text" class="form-control" id="from" required formControlName="from">
+                  <div *ngIf=" submitted && formCon.from.errors?.['required']"  class="alert alert-danger"> Email is required </div>  
+                  <div *ngIf="formCon.from.errors?.['email']"  class="alert alert-danger"> Email isn't valid! </div>  
+                </div>
+
+                <div class="form-group">
+                  <label for="subject">Subject</label>
+                  <input type="text"  class="form-control" id="subject" required formControlName="subject">
+                  <div *ngIf="submitted && formCon.subject.errors?.['required']" class="alert alert-danger"> Subject is required </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="body">body</label>
+                  <textarea type="text"  class="form-control" id="body" required formControlName="body"></textarea>
+                  <div *ngIf="submitted && formCon.body.errors?.['required']" class="alert alert-danger"> Body is required </div>
+                </div>
+          
+      </div>
+      <div class="modal-footer bg-secondary">
+        <button type="button" #myModalClose class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-success" [disabled]="mailModel.invalid">Send email</button>
+        <!-- [disabled]="!sendMailForm.form.valid" -->
+      </div>
+
+    </form>
+    </div>
+  </div>
+</div>
+
+<!--About Modal -->
+<div class="modal fade" id="aboutMe" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header bg-secondary">
+        <h5 class="modal-title" id="exampleModalLabel">ABOUT ME</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <ul class="fst-italic text-dark">
+          <li>4 plus years of relevant experience in software development using Microsoft Technologies.</li>
+          <li>Having experience on Health Care, Travel and Hospitality based web applications.</li>
+          <li>Expertise in SQL and JavaScript.</li>
+          <li>Hands on experience in C#, Dot net, Angular 8, Dot net core, VB.NET, ASP.NET, JavaScript, CSS, Web API, Java.</li>
+          <li>Knowledge in Visual Studio 2010/2017/2019/2022 and VS code tool for the development of Dot Net projects.</li>
+          <li>Skilled in requirements analysis and project documentation.</li>
+          <li>Proficient in coding and developing the new program.</li>
+          <li>Ability to perform at a high level, meet deadlines, adaptable to ever-changing priorities.</li>
+          <li>Successful in providing 100% quality outputs with changing project timeline.</li>
+          <li>Highly Motivated, able to work as part of a team to accomplish the goal.</li>
+          <li>Good communication, presentation, and interpersonal skills.</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--About Modal -->
+<div class="modal fade" id="certification" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header bg-secondary">
+        <h5 class="modal-title" id="exampleModalLabel">CERTIFICATIONS</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <ul class="fst-italic text-dark">
+          <li class="list-unstyled"><img src="../../../assets/certifications/ADM RBP.png" class="d-block w-100" alt="third-image" ></li>
+          <li class="list-unstyled"><img src="../../../assets/certifications/ADM WEB api skill based assessment-1.png" class="d-block w-100" alt="third-image" ></li>
+          <li class="list-unstyled"><img src="../../../assets/certifications/Architect Based Assessment-1.png" class="d-block w-100" alt="third-image" ></li>
+          <li class="list-unstyled"><img src="../../../assets/certifications/Aspiring Architect Assessment-1.png" class="d-block w-100" alt="third-image" ></li>
+          <li class="list-unstyled"><img src="../../../assets/certifications/Briefing on AI chat gpt-1.png" class="d-block w-100" alt="third-image" ></li>
+          <li class="list-unstyled"><img src="../../../assets/certifications/C design patterns-1.png" class="d-block w-100" alt="third-image" ></li>
+          <li class="list-unstyled"><img src="../../../assets/certifications/Chat gpt for work-1.png" class="d-block w-100" alt="third-image" ></li>
+          <li class="list-unstyled"><img src="../../../assets/certifications/Foundation of .net plaform security-1.png" class="d-block w-100" alt="third-image" ></li>
+          <li class="list-unstyled"><img src="../../../assets/certifications/SE_Microsoft_core cluster-1.png" class="d-block w-100" alt="third-image" ></li>
+          <li class="list-unstyled"><img src="../../../assets/certifications/Project.png" class="d-block w-100" alt="third-image" ></li>
+          <li class="list-unstyled"><img src="../../../assets/certifications/Gen AI.png" class="d-block w-100" alt="third-image" ></li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
